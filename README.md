@@ -6,7 +6,7 @@ A [PettingZoo](https://pettingzoo.farama.org/) `ParallelEnv` that wraps the
 ## Install
 
 ```bash
-uv add hisss-pz
+uv pip install -e /path/to/hisss-pz
 ```
 
 ## Quickstart
