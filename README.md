@@ -12,10 +12,9 @@ uv add hisss-pz
 ## Quickstart
 
 ```python
-import hisss
-from hisss_pz import HisssEnv
+from hisss_pz import battlesnake_duel_v0
 
-env = HisssEnv(cfg=hisss.duel_config())
+env = battlesnake_duel_v0.env()
 observations, infos = env.reset()
 
 while env.agents:

@@ -26,16 +26,21 @@ class HisssEnv(ParallelEnv[str, np.ndarray, int]):
     render_modes: list[RenderMode] = ["human", "ansi"]
     metadata = {
         "render_modes": render_modes,
-        "name": "BattleSnake-Duell-v0",
+        "name": "battlesnake_custom",
     }
 
     def __init__(
         self,
+        name: str | None = None,
         cfg: hisss.BattleSnakeConfig | None = None,
         render_mode: RenderMode | None = None,
     ) -> None:
         if cfg is None:
             cfg = hisss.duel_config()
+
+        if name is not None:
+            cfg.name = name
+
         if render_mode is not None and render_mode not in self.render_modes:
             raise ValueError(
                 f"render_mode {render_mode!r} is not supported. Valid modes: {self.render_modes}"
